@@ -11,12 +11,15 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
-    var m: LocationManager!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       m = LocationManager.init()
+      
+        
+        LocationManager.init { (currentLocation) -> Void in
+            print(currentLocation)
+        }
     }
 
     override func didReceiveMemoryWarning() {
